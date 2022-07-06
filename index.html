@@ -33,20 +33,6 @@
 
 <body>
   <div id="app"></div>
-  <!-- <h1>1번째 고양이 가라사대2</h1>
-    <form>
-      <input type="text" name="name" placeholder="영어 대사를 입력해주세요" />
-      <button type="submit">생성</button>
-    </form>
-    <div class="main-card">
-      <img
-        src="https://cataas.com/cat/60b73094e04e18001194a309/says/react"
-        alt="고양이"
-        width="400"
-      />
-      <button>🤍</button>
-    </div>
-     -->
   <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
   <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
   <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
@@ -58,13 +44,49 @@
         <img src="https://cataas.com/cat/60b73094e04e18001194a309/says/react" />
       </li>
     );
-    const 여기다가그려 = document.querySelector("#app");
+    const FOO = "hello world";
     const favorites = (
       <ul class="favorites">
         {catItem}
+        {catItem}
+        {catItem}
       </ul>
+    );
+
+    const mainCard = (
+      <div class="main-card">
+        <img
+          src="https://cataas.com/cat/60b73094e04e18001194a309/says/react"
+          alt="고양이"
+          width="400"
+        />
+        <button>🤍</button>
+      </div>
+    );
+    const h1 = (
+      <div>
+        <h1>1번째 고양이 가라사대2</h1>
+      </div>
     )
-    ReactDOM.render(catItem, 여기다가그려);
+    const text = (
+      <div>
+        <form>
+          <input type="text" name="name" placeholder="영어 대사를 입력해주세요" />
+          <button type="submit">생성</button>
+        </form>
+      </div>
+    )
+    const app = (
+      <div>
+        {h1}
+        {text}
+        {mainCard}
+        {favorites}
+      </div>
+    )
+
+    const 여기다가그려 = document.querySelector("#app");
+    ReactDOM.render(app, 여기다가그려);
 
       // // 1. 좋아요 버튼 찾기
       // const likeButton = document.querySelector(".main-card button");
