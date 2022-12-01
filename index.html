@@ -25,10 +25,6 @@
     flex-wrap: wrap;
     gap: 15px;
   }
-
-  .favorites img {
-    width: 150px;
-  }
 </style>
 
 <body>
@@ -44,39 +40,42 @@
       return <h1>{props.children}</h1>;
     };
 
-    const form = (
-      <form>
-        <input
-          type="text"
-          name="name"
-          placeholder="영어 대사를 입력해주세요"
-        />
-        <button type="submit">생성</button>
-      </form>
-    );
+
+    const Form = () => {
+      return (
+        <form>
+          <input
+            type="text"
+            name="name"
+            placeholder="영어 대사를 입력해주세요"
+          />
+          <button type="submit">생성</button>
+        </form>
+      );
+    };
 
     function CatItem(props) {
       return (
         <li>
-          <img src={props.img} />
+          <img src={props.img} style={{ width: '150px' }} />
         </li>
       );
     }
 
     function Favorites() {
       return (
-        <ul class="favorites">
+        <ul className="favorites">
           <CatItem img="https://cataas.com/cat/BxqL2EjFmtxDkAm2/says/inflearn" />
           <CatItem img="https://cataas.com/cat/18MD6byVC1yKGpXp/says/JavaScript" />
         </ul>
       );
     }
 
-    const MainCard = () => {
+    const MainCard = (props) => {
       return (
-        <div class="main-card">
+        <div className="main-card">
           <img
-            src="https://cataas.com/cat/HSENVDU4ZMqy7KQ0/says/react"
+            src={props.img}
             alt="고양이"
             width="400"
           />
@@ -88,8 +87,8 @@
     const app = (
       <div>
         <Title>1번째 고양이 가라사대</Title>
-        {form}
-        <MainCard />
+        <Form />
+        <MainCard img="https://cataas.com/cat/HSENVDU4ZMqy7KQ0/says/react" />
         <Favorites />
       </div>
     );
