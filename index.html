@@ -41,6 +41,8 @@
     };
 
     const Form = ({ handleFormSubmit }) => {
+      const includesHangul = (text) => /[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/i.test(text);
+
       const [value, setValue] = React.useState("");
       function handleInputChange(e) {
         setValue(e.target.value.toUpperCase());
